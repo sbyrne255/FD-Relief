@@ -12,8 +12,8 @@
 		<!-- Main BootStrap Dependencies -->
 		<link rel="stylesheet" href="core/Dependency/Bootstrap/css/bootstrap.min.css">
 		<script src="core/Dependency/Bootstrap/js/bootstrap.min.js"></script>
-		<!-- CUSTOM CSS -->
-
+		<!-- Main Database Operations (Custom) -->
+		<script src="core/Dependency/DatabaseOps/dbops.min.js"></script>
 		
 		<script> $(document).ready(function() {$('#example').DataTable();} );</script>
 		
@@ -76,16 +76,6 @@
 									<td>$170,750</td>
 								</tr>
 							</tbody>
-							<tfoot>
-								<tr>
-									<th>Name</th>
-									<th>Position</th>
-									<th>Office</th>
-									<th>Age</th>
-									<th>Start date</th>
-									<th>Salary</th>
-								</tr>
-							</tfoot>
 						</table>
 					</div>
 				</div>
@@ -128,9 +118,14 @@
 										</select>
 										<small id="exportTypeHelpBlock" class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
 									</div>
-									https://www.chartjs.org/docs/latest/general/accessibility.html
-									https://getbootstrap.com/docs/4.0/components/forms/
-									https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server
+									<!-- DOCUMENTATION TO REVIEW 
+										https://www.chartjs.org/docs/latest/general/accessibility.html
+										https://getbootstrap.com/docs/4.0/components/forms/
+										https://stackoverflow.com/questions/3665115/how-to-create-a-file-in-memory-for-user-to-download-but-not-through-server
+										https://stackoverflow.com/questions/23419234/how-to-call-npm-install-from-inno-setup
+										INNO INSTALLER PLACES SOURCE FILES & INSTALLS NODE.JS, NODE IS THEN USED FOR ALL DATABASE MANAGEMENT/ETC. THIS ALLOWS THE PROGRAM TO RUN INDEPENDENTLY FROM A SERVER
+											WHILE STILL MAINTAINING THE BEAUTIFUL WEB INTERFACE I WANT.
+									/ DOCUMENTATION TO REVIEW -->
 								</div>
 							</form>
 						</div>
@@ -148,12 +143,12 @@
 	var myPassword = "myPassword";
 
 	// PROCESS
-	var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
-	var decrypted = CryptoJS.AES.decrypt(encrypted, myPassword);
-	document.getElementById("demo0").innerHTML = myString;
-	document.getElementById("demo1").innerHTML = encrypted;
-	document.getElementById("demo2").innerHTML = decrypted;
-	document.getElementById("demo3").innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+	//var encrypted = CryptoJS.AES.encrypt(myString, myPassword);
+	//var decrypted = CryptoJS.AES.decrypt(encrypted, myPassword);
+	//document.getElementById("demo0").innerHTML = myString;
+	//document.getElementById("demo1").innerHTML = encrypted;
+	//document.getElementById("demo2").innerHTML = decrypted;
+	//document.getElementById("demo3").innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
 	
 </script>
 <div class="chart-container" style="position: relative; height:20vh; width:20vw">
