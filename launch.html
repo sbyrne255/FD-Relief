@@ -1,5 +1,31 @@
  <html>
-	<header>		
+	<header>	
+<!-- 
+THE FOLLOWING PLAN IS IN PLACE, INSTEAD OF USING JS/DOTNET FRAMEWORK WE USE PURE JS WITH HTML5 LOCATION STORAGE.
+THE DATA IS ENCRYPTED (ALL THE DATA) AND PLACED IN LOCAL STORAGE, THE DECRYPTION KEY IS REQUIRED TO GET THE DATA 
+BACK OUT (IE THE PROGRAM IS OPENED, ASKS FOR A PASSWORD, PWD IS USED THROUGHOUT THE LIFESPAN OF THE SESSION)
+AFTER CHANGES HAVE BEEN MADE, THE DATA IS STORED (IN MEMORY) AND PROMPTS THE USER TO SAVE THE DATA (ONCE TO LOCAL STORAGE IN HTML5
+AND ONCE AS A FILE [WITH OPTIONS FOR ENCRYPTED/UNECNRYPTED] AS A BACKUP). 
+
+https://www.w3schools.com/html/html5_webstorage.asp
+https://50linesofco.de/post/2019-07-05-reading-local-files-with-javascript
+document.getElementById('fileInput').addEventListener('change', function selectedFileChanged() {
+  if (this.files.length === 0) {
+    console.log('No file selected.');
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function fileReadCompleted() {
+      const img = new Image();          // creates an <img> element
+      img.src = reader.result;          // loads the data URL as the image source
+      document.body.appendChild(img);   // adds the image to the body
+  };
+  reader.readAsDataURL(this.files[0]);
+});
+
+
+->	
 		<!-- JQuery (Multiple Dependencies) -->
 		<script src="core/Dependency/JQuery/jquery.min.js"></script>
 		<!-- Main Encryption Dependencies -->
